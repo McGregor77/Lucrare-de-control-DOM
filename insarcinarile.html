@@ -1,0 +1,161 @@
+******1)
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Input X:</p> <input name="x" type="number" value="0"><br>
+<p>Input Y:</p> <input name="y" type="number" value="0"><br>
+
+
+<button onclick="Sumare()">Sumarea</button>
+
+<div id="Suma"></div>
+
+<script>
+function Sumare() {
+  var x = +document.getElementsByName("x")[0].value;
+  var y = +document.getElementsByName("y")[0].value;
+  
+  var suma = document.getElementById("Suma").innerHTML = x + y;
+}
+</script>
+
+</body>
+</html>
+
+
+
+********2)
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Input X:</p> <input name="x" type="number" value="0"><br>
+<p>Input Y:</p> <input name="y" type="number" value="0"><br>
+
+
+<button onclick="Schimb()">Schimb</button>
+
+<div id="Suma"></div>
+
+<script>
+function Schimb() {
+  var x = document.getElementsByName("x")[0];
+  var y = document.getElementsByName("y")[0];
+  var z = x.value;
+  x.value = y.value;
+  y.value = z
+  
+  
+}
+</script>
+
+</body>
+</html>
+
+****************3)
+<html>
+<body>
+
+<div id="container">component</div>
+
+
+
+<script>
+   var container = document.getElementById("container");
+        container.addEventListener("mouseover",(e)=>{
+        e.target.classList.add("verde");
+        e.target.style.backgroundColor = "red";
+    })
+</script>
+</body>
+</html>
+
+
+**************5)
+<script>
+    var list = document.createElement("ul");
+    for(let item = 0; item<=9; item++){
+        var li = document.createElement("li");
+        li.innerHTML ="Element NR "+(+item+1);
+        list.appendChild(li);
+    }
+    document.body.appendChild(list);
+</script>
+
+*********6)
+<script>
+    var list = document.createElement("ul");
+    list.id = "lista";
+    for(let item = 0; item<=9; item++){
+        var li = document.createElement("li");
+        li.innerHTML ="Element NR "+(+item+1);
+        list.appendChild(li);
+    }
+    document.body.appendChild(list);
+
+    document.getElementById("lista").lastChild.style.background ="violet";
+</script>
+
+******7)
+<script> 
+    var buton = document.createElement("button");
+    buton.innerHTML = "Sterge"
+    buton.onclick = ()=>{
+        document.getElementById("lista").children[4].remove()
+    };
+    document.body.appendChild(buton);
+</script>
+********8)
+<script>
+      var list = document.createElement("ul");
+    for(let item = 0; item<=9; item++){
+        var li = document.createElement("li");
+        li.innerHTML ="Element NR "+(+item+1);
+        li.className="cerc";
+        list.appendChild(li);
+    }
+    document.body.appendChild(list);
+</script>
+<style>
+    .cerc{
+        background:black;
+    }
+</style>
+
+******9)
+<script>
+        var lista = [3,6,9,4,6,7,13,5,12,2]
+        lista = lista.sort(function(a, b) {
+            return a - b;
+        });
+        var list = document.createElement("ul");
+        for(let item of lista){
+            var li = document.createElement("li");
+            li.innerHTML ="Element NR "+item;
+            list.appendChild(li);
+        }
+        document.body.appendChild(list);
+</script>
+
+*******10)
+<script>
+    setTimeout(()=>{document.body.style.background ="gray"},5000)
+</script>
+
+******11)
+
+<script>
+    var list = document.createElement("ul");
+    for(let item = 0; item<=9; item++){
+        var li = document.createElement("li");
+        li.innerHTML ="Element NR "+(+item+1);
+        list.appendChild(li);
+    }
+    document.body.appendChild(list);
+    setInterval(()=>{
+        var li = document.createElement("li");
+        li.innerHTML ="Element NR "+(list.childElementCount+1);
+        list.appendChild(li);
+    },10000)
+</script>
